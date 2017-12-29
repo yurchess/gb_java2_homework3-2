@@ -44,7 +44,6 @@ public class PhoneBook {
             Element rootElement = doc.createElement("PhoneNumbers");
             doc.appendChild(rootElement);
 
-
             for (Map.Entry<String, ArrayList<String>> entry : elements.entrySet()) {
                 String lastName = entry.getKey();
                 ArrayList<String> phones = entry.getValue();
@@ -69,7 +68,7 @@ public class PhoneBook {
             StreamResult file = new StreamResult(fileName);
             transformer.transform(source, file);
             System.out.println("Exported to XML");
-            
+
         } catch (ParserConfigurationException pce) {
             pce.printStackTrace();
         } catch (TransformerException tfe) {
